@@ -1,0 +1,164 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{pslatex}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{framed}
+\usepackage[normalem]{ulem}
+\usepackage{lipsum}
+\usepackage{dirtytalk}
+\usepackage{hyperref}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+
+\usepackage{newtxmath}
+\DeclareMathAlphabet{\mathpzc}{T1}{pzc}{m}{it}
+\def\given{\mid}
+\usepackage{bm}
+\def\tnull{{\text{null}}}
+\def\vec#1{{ \bm{#1} }}
+\def\mat#1{\mathbf{#1}}
+
+% abbreviations
+\def\etal{\emph{et~al}.\ }
+\def\eg{e.g.,~}
+\def\ie{i.e.,~}
+\def\cf{cf.\ }
+\def\viz{viz.\ }
+\def\vs{vs.\ }
+
+\usepackage{xcolor}
+\definecolor{myorange}{RGB}{230, 81, 0}
+\definecolor{mypurple}{RGB}{170, 0, 255}
+\definecolor{mygreen}{RGB}{76, 175, 80}
+\definecolor{myblue}{RGB}{33,150,243}
+\definecolor{shadecolor}{RGB}{210, 210, 210}
+
+
+\usepackage[backend=biber, sortcites=true, autocite=superscript]{biblatex}
+\addbibresource{rebuttal.bib}
+
+\AtEveryBibitem{%
+ \clearfield{url}%
+ \clearfield{month}%
+ \clearfield{issn}%
+ \clearfield{doi}%%
+}
+
+%
+% COLORBOX
+%
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\newtcolorbox[auto counter, number within=section, list type=subsubsection, list inside=toc]{sectionbox}[1]{colback=white, colframe=black, colbacktitle=white!80!gray, coltitle=black, fonttitle=\bfseries, title={Comment \thetcbcounter}, list entry={Comment \thetcbcounter\quad}, breakable}
+
+
+\def\figdir{../Figs}
+
+%\usepackage[most]{tcolorbox}
+\newcommand{\todo}[1]{{\leavevmode\color{myorange}[TODO: #1]}}
+\newcommand{\add}[1]{{\leavevmode\color{myblue}#1}}
+\newcommand{\del}[1]{{\leavevmode\color{red}\sout{#1}}}
+\newcommand{\response}[1]{{\noindent \textbf{Response:} \\ \noindent #1}}
+\newcommand{\rcomment}[1]{%
+\vspace{10pt}
+\begin{sectionbox}
+s #1
+\end{sectionbox}
+}
+\newcommand{\correction}[2]{{\begin{quotation}\noindent {#1}{\it #2} \end{quotation} }}
+
+\newcommand{\mycaption}[2]{%
+  \caption[#1]{\textbf{#1} \small#2}%
+}
+
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+\begin{flushleft}
+\Large  \textbf{\@title}
+\end{flushleft}\egroup
+}
+\makeatother
+\title{RE: XXX submission XXXX}
+\date{}
+\begin{document}
+\maketitle
+
+\bigskip
+\noindent Dear Dr.~XXXX, \\
+
+We thank $\dots$ 
+
+Overview of the response.
+
+Overview of the referees' comments.
+
+\begin{enumerate}
+    \itemsep0em
+    \item Our approach lacked $\dots$ 
+    \item Our findings were not $\dots$ 
+\end{enumerate}
+
+Explanation of how they are addressed. 
+
+We thank $\dots$ \\
+
+Sincerely Yours,
+
+Sign
+
+
+\clearpage
+\tableofcontents
+\clearpage
+
+
+\section{Major addition that cuts across all reviews}\label{sec:major}
+
+\lipsum[1]{} 
+
+
+%
+% SECTION- POINT-BY-POINT DISCUSSION
+%
+\clearpage
+\section{Response to Referee 1}
+
+Overview. 
+
+\rcomment{%
+\lipsum[1]{} 
+}
+
+\response{%
+\lipsum[1]{}
+}
+
+%
+% Response to reviewer 2
+%
+\clearpage
+\section{Response to Referee 2}
+
+Overview. 
+
+\rcomment{%
+\lipsum[1]{} 
+}
+
+\response{%
+\lipsum[1]{}
+}
+
+%
+% BIBLIOGRAPHY
+%
+\clearpage
+\printbibliography{}
+\end{document}
