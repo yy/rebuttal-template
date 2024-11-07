@@ -1,5 +1,4 @@
 \documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{amsthm}
 \usepackage{amssymb}
@@ -15,10 +14,7 @@
 \usepackage{hyperref}
 \usepackage{todonotes}
 
-
-\setlength{\parindent}{0em}
-\setlength{\parskip}{0.5em}
-
+% math
 \usepackage{newtxmath}
 \DeclareMathAlphabet{\mathpzc}{T1}{pzc}{m}{it}
 \def\given{\mid}
@@ -27,22 +23,7 @@
 \def\vec#1{{ \bm{#1} }}
 \def\mat#1{\mathbf{#1}}
 
-% abbreviations
-\def\etal{\emph{et~al}.\ }
-\def\eg{e.g.,~}
-\def\ie{i.e.,~}
-\def\cf{cf.\ }
-\def\viz{viz.\ }
-\def\vs{vs.\ }
-
-\usepackage{xcolor}
-\definecolor{myorange}{RGB}{230, 81, 0}
-\definecolor{mypurple}{RGB}{170, 0, 255}
-\definecolor{mygreen}{RGB}{76, 175, 80}
-\definecolor{myblue}{RGB}{33,150,243}
-\definecolor{shadecolor}{RGB}{210, 210, 210}
-
-
+% bibliography
 \usepackage[backend=biber, sortcites=true, autocite=superscript]{biblatex}
 \addbibresource{rebuttal.bib}
 
@@ -52,6 +33,19 @@
  \clearfield{issn}%
  \clearfield{doi}%%
 }
+
+
+% look
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\definecolor{myorange}{RGB}{230, 81, 0}
+\definecolor{mypurple}{RGB}{170, 0, 255}
+\definecolor{mygreen}{RGB}{76, 175, 80}
+\definecolor{myblue}{RGB}{33,150,243}
+\definecolor{shadecolor}{RGB}{210, 210, 210}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
 
 %
 % COLORBOX
@@ -63,8 +57,6 @@
 
 \def\figdir{../Figs}
 
-%\usepackage[most]{tcolorbox}
-\newcommand{\todo}[1]{{\leavevmode\color{myorange}[TODO: #1]}}
 \newcommand{\add}[1]{{\leavevmode\color{myblue}#1}}
 \newcommand{\del}[1]{{\leavevmode\color{red}\sout{#1}}}
 \newcommand{\response}[1]{{\noindent \textbf{Response:} \\ \noindent #1}}
